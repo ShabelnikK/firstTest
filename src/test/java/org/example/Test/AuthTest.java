@@ -1,7 +1,7 @@
 package org.example.Test;
 
 import org.example.Application;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 public class AuthTest extends Application {
 
