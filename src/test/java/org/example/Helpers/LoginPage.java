@@ -2,7 +2,6 @@ package org.example.Helpers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class LoginPage extends Helper {
 
@@ -15,13 +14,12 @@ public class LoginPage extends Helper {
         super(driver);
     }
 
-
     public void login() {
         String email = "test@gmail.com";
-        String password = "test@gmail.com";
-        Assert.assertTrue(isElementPresent(loginForm));
+        String password = "password";
+        clickOnVisibleElement(loginForm);
         fillField(email, emailField);
         fillField(password, passwordField);
-        driver.findElement(loginButton).click();
+        clickOnVisibleElement(loginButton);
     }
 }

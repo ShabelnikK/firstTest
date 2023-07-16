@@ -2,10 +2,9 @@ package org.example.Test;
 
 import org.junit.jupiter.api.Test;
 
-public class EditContact {
+public class EditContactTest {
 
     @Test
     void editOldContacts() {
-
     }
 }

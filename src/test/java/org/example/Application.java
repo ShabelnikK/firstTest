@@ -4,15 +4,12 @@ import org.example.Helpers.MainSetUp;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 
-import java.net.MalformedURLException;
-
-
-public class Application{
+public class Application {
 
     public static MainSetUp app = new MainSetUp();
 
     @BeforeTest
-    public void appSetUp() throws MalformedURLException {
+    public void appSetUp() {
         app.browseSetUp(true);
     }
 
@@ -21,3 +18,5 @@ public class Application{
         app.stop();
     }
 }
+
+

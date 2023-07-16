@@ -1,23 +1,19 @@
 package org.example.Helpers;
 
-import org.openqa.selenium.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class MainSetUp {
     public WebDriver driver;
     LoginPage login;
 
-    public LoginPage getLogin() {
-        return login;
-    }
-
-    public void browseSetUp(boolean useRemoteDriver) throws MalformedURLException{
-        if (useRemoteDriver == true){
-            driver = WebDriverManager.chromedriver().create();
+    public void browseSetUp(boolean useRemoteDriver) {
+        if (useRemoteDriver) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
         }
         driver.get("http://phonebook.telran-edu.de:8080");
         driver.manage().window().maximize();
@@ -28,5 +24,9 @@ public class MainSetUp {
 
     public void stop() {
         driver.quit();
+    }
+
+    public LoginPage getLogin() {
+        return login;
     }
 }
