@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <selenium.version>4.10.0</selenium.version>
     <jupiter.version>5.9.2</jupiter.version>
-    <webdrivermanager.version>5.1.0</webdrivermanager.version>
+    <webdrivermanager.version>5.3.2</webdrivermanager.version>
   </properties>
 
   <dependencies>
@@ -42,8 +42,15 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>2.0.0-alpha1</version>
+      <version>2.0.5</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.7.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>
