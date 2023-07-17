@@ -16,7 +16,7 @@ public class LoginPage extends Helper {
 
     public void login() {
         String email = "test@gmail.com";
-        String password = "password";
+        String password = "test@gmail.com";
         clickOnVisibleElement(loginForm);
         fillField(email, emailField);
         fillField(password, passwordField);

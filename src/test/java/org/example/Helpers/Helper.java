@@ -1,11 +1,12 @@
 package org.example.Helpers;
 
+import org.example.Data.DataProviders;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class Helper {
+public class Helper extends DataProviders {
 
     WebDriver driver;
 
