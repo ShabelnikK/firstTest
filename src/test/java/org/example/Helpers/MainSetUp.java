@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class MainSetUp {
     public WebDriver driver;
     LoginPage login;
-    NewContactPage newContact;
+    AddContactPage addContact;
     Header header;
     ContactListHelper contactListHelper;
     ContactPage contactPage;
@@ -17,8 +17,8 @@ public class MainSetUp {
     public LoginPage getLogin() {
         return login;
     }
-    public NewContactPage getNewContact() {
-        return  newContact;
+    public AddContactPage getAddContact() {
+        return  addContact;
     };
     public Header getHeader(){
         return header;
@@ -42,7 +42,7 @@ public class MainSetUp {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         login = new LoginPage(driver);
-        newContact = new NewContactPage(driver);
+        addContact = new AddContactPage(driver);
         header = new Header(driver);
         contactListHelper = new ContactListHelper(driver);
         contactPage = new ContactPage(driver);

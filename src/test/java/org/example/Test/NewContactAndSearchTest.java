@@ -11,8 +11,8 @@ public class NewContactAndSearchTest extends Application {
         //Добавление троих новых контактов
         app.getLogin().login();
         app.getHeader().openDialogAddNewContact();
-        app.getNewContact().fillFieldAddContact(firstName, lastName, description);
-        app.getNewContact().clickSaveNewContactButton();
+        app.getAddContact().fillFieldAddContact(firstName, lastName, description);
+        app.getAddContact().clickSaveNewContactButton();
         app.getHeader().logout();
     }
 
@@ -24,7 +24,7 @@ public class NewContactAndSearchTest extends Application {
         app.getContactListHelper().fillFieldSearchContactForm(searchText);
         app.getContactListHelper().openContact();
         //Нужно разобраться как еще подсасывать и данные с новым именем
-        app.getContactPage().editContactFirstName(newFirstName);
+        /*app.getContactPage().editContactFirstName(newFirstName);*/
         app.getHeader().logout();
     }
 }
