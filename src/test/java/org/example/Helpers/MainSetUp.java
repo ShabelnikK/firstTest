@@ -12,6 +12,7 @@ public class MainSetUp {
     NewContactPage newContact;
     Header header;
     ContactListHelper contactListHelper;
+    ContactPage contactPage;
 
     public LoginPage getLogin() {
         return login;
@@ -24,6 +25,9 @@ public class MainSetUp {
     }
     public ContactListHelper getContactListHelper() {
         return contactListHelper;
+    }
+    public ContactPage getContactPage() {
+        return contactPage;
     }
 
     public void browseSetUp(boolean useRemoteDriver) {
@@ -41,6 +45,7 @@ public class MainSetUp {
         newContact = new NewContactPage(driver);
         header = new Header(driver);
         contactListHelper = new ContactListHelper(driver);
+        contactPage = new ContactPage(driver);
     }
 
     public void stop() {

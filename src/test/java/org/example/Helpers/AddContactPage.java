@@ -3,17 +3,16 @@ package org.example.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NewContactPage extends Helper {
-
-    public NewContactPage(WebDriver driver) {
-        super(driver);
-    }
-
+public class AddNewContactPage extends Helper {
 
     By firstNameField = By.cssSelector("[placeholder=\"Имя\"]");
     By lastNameField = By.cssSelector("[placeholder=\"Фамилия\"]");
     By descriptionField = By.cssSelector("[placeholder=\"About\"]");
     By saveButton = By.xpath("//button[.='Сохранить']");
+
+    public AddNewContactPage(WebDriver driver) {
+        super(driver);
+    }
 
 
     public void fillFieldAddContact(String firstName, String lastName, String description) throws InterruptedException {

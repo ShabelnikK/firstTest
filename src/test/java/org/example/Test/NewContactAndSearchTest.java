@@ -23,6 +23,8 @@ public class NewContactAndSearchTest extends Application {
         app.getHeader().openDialogAndChangeLanguage();
         app.getContactListHelper().fillFieldSearchContactForm(searchText);
         app.getContactListHelper().openContact();
+        //Нужно разобраться как еще подсасывать и данные с новым именем
+        app.getContactPage().editContactFirstName(newFirstName);
         app.getHeader().logout();
     }
 }
