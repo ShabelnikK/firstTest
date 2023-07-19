@@ -9,15 +9,12 @@ public class NewContactPage extends Helper {
         super(driver);
     }
 
-    By addForm = By.xpath("//a[.='Добавить новый контакт']");
+
     By firstNameField = By.cssSelector("[placeholder=\"Имя\"]");
     By lastNameField = By.cssSelector("[placeholder=\"Фамилия\"]");
     By descriptionField = By.cssSelector("[placeholder=\"About\"]");
     By saveButton = By.xpath("//button[.='Сохранить']");
 
-    public void openDialogAddNewContact() {
-        clickOnVisibleElement(addForm);
-    }
 
     public void fillFieldAddContact(String firstName, String lastName, String description) {
         fillField(firstName, firstNameField);

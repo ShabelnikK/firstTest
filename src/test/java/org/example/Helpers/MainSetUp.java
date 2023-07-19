@@ -10,14 +10,22 @@ public class MainSetUp {
     public WebDriver driver;
     LoginPage login;
     NewContactPage newContact;
+    Header header;
+    ContactListHelper contactListHelper;
 
     public LoginPage getLogin() {
         return login;
     }
-
     public NewContactPage getNewContact() {
         return  newContact;
     };
+    public Header getHeader(){
+        return header;
+    }
+    public ContactListHelper getContactListHelper() {
+        return contactListHelper;
+    }
+
     public void browseSetUp(boolean useRemoteDriver) {
         if (useRemoteDriver == true) {
             WebDriverManager.chromedriver().setup();
@@ -31,6 +39,8 @@ public class MainSetUp {
 
         login = new LoginPage(driver);
         newContact = new NewContactPage(driver);
+        header = new Header(driver);
+        contactListHelper = new ContactListHelper(driver);
     }
 
     public void stop() {

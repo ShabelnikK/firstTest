@@ -21,7 +21,6 @@ public class Helper extends DataProviders {
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(userData);
     }
-
     public boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
