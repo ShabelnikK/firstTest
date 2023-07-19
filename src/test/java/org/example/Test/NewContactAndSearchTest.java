@@ -13,17 +13,16 @@ public class NewContactAndSearchTest extends Application {
         app.getHeader().openDialogAddNewContact();
         app.getNewContact().fillFieldAddContact(firstName, lastName, description);
         app.getNewContact().clickSaveNewContactButton();
-        app.getHeader().logOut();
-        Thread.sleep(3000);
+        app.getHeader().logout();
     }
 
-    @Test(dataProvider = "searchText", dataProviderClass = DataProviders.class)
-    void searchContact(String searchText) throws InterruptedException {
+    @Test(dataProvider = "searchContact", dataProviderClass = DataProviders.class)
+    void searchAndOpenContact(String searchText) throws InterruptedException {
         //Поиск созданных контактов и смена языка
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
-        Thread.sleep(2000);
         app.getContactListHelper().fillFieldSearchContactForm(searchText);
-        Thread.sleep(3000);
+        app.getContactListHelper().openContact();
+        app.getHeader().logout();
     }
 }

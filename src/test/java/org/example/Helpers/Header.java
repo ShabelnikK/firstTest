@@ -9,25 +9,29 @@ public class Header extends Helper{
     By languageSelectForm = By.cssSelector("[id=\"langSelect\"]");
     By addForm = By.xpath("//a[.='Добавить новый контакт']");
     By accountForm = By.xpath("//*[@type=\"submit\"][text()=\"Учетная запись \"]");
-    By logoutButton = By.xpath("//*[@type=\"submit\"][text()=\"Выйти\"]");
-
+    By logoutButton = By.xpath("//*[@type=\"submit\"][text()=\"Logout\"]");
     By changeLanguage = By.cssSelector("[value=\"en\"]");
+
+
     public Header(WebDriver driver) {
         super(driver);
     }
 
-    public void openDialogAddNewContact() {
+    public void openDialogAddNewContact() throws InterruptedException{
         clickOnVisibleElement(addForm);
+        Thread.sleep(1000);
     }
 
-    public void openDialogAndChangeLanguage() {
+    public void openDialogAndChangeLanguage() throws InterruptedException {
         clickOnVisibleElement(languageSelectForm);
         driver.findElement(changeLanguage).click();
+        Thread.sleep(1000);
     }
     public void openAccount() {
         clickOnVisibleElement(accountForm);
     }
-    public void logOut() {
+    public void logout() throws InterruptedException {
         clickOnVisibleElement(logoutButton);
+        Thread.sleep(1500);
     }
 }

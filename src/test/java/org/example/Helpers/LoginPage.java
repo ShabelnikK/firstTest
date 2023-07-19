@@ -15,12 +15,13 @@ public class LoginPage extends Helper {
         super(driver);
     }
 
-    public void login() {
+    public void login() throws InterruptedException {
         String email = "test@gmail.com";
         String password = "test@gmail.com";
         Assert.assertTrue(isElementPresent(loginForm));
         fillField(email, emailField);
         fillField(password, passwordField);
+        Thread.sleep(1000);
         clickOnVisibleElement(loginButton);
         Assert.assertTrue(isElementPresent(contactTable));
     }

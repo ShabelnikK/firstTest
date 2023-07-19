@@ -16,10 +16,11 @@ public class NewContactPage extends Helper {
     By saveButton = By.xpath("//button[.='Сохранить']");
 
 
-    public void fillFieldAddContact(String firstName, String lastName, String description) {
+    public void fillFieldAddContact(String firstName, String lastName, String description) throws InterruptedException {
         fillField(firstName, firstNameField);
         fillField(lastName, lastNameField);
         fillField(description, descriptionField);
+        Thread.sleep(1500);
     }
 
     public void clickSaveNewContactButton() {

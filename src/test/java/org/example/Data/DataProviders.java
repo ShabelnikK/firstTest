@@ -18,7 +18,7 @@ public class DataProviders {
     }
 
     @DataProvider
-    Iterator<Object[]> searchText (){
+    Iterator<Object[]> searchContact (){
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{"Okay"});
         list.add(new Object[]{"Crist"});
