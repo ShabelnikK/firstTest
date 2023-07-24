@@ -8,6 +8,7 @@ public class AuthTest extends Application {
     @Test
     void authTest() throws InterruptedException {
         app.getLogin().login();
+        app.getHeader().openDialogAndChangeLanguage();
         app.getHeader().logout();
     }
 }

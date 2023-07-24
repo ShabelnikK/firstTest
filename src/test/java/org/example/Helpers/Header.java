@@ -7,7 +7,7 @@ import org.testng.Assert;
 public class Header extends Helper{
 
     By languageSelectForm = By.cssSelector("[id=\"langSelect\"]");
-    By addForm = By.xpath("//a[.='Добавить новый контакт']");
+    By addForm = By.xpath("//*[@class='nav-link'][@href='/contacts']");
     By accountForm = By.xpath("//*[@type=\"submit\"][text()=\"Учетная запись \"]");
     By logoutButton = By.xpath("//*[@type=\"submit\"][text()=\"Logout\"]");
     By changeLanguage = By.cssSelector("[value=\"en\"]");

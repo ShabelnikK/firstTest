@@ -13,6 +13,7 @@ public class NewContactAndSearchTest extends Application {
         app.getHeader().openDialogAddNewContact();
         app.getAddContact().fillFieldAddContact(firstName, lastName, description);
         app.getAddContact().clickSaveNewContactButton();
+        app.getHeader().openDialogAndChangeLanguage();
         app.getHeader().logout();
     }
 

@@ -23,6 +23,7 @@ public class Application {
     @BeforeMethod
     public void startTest(Method m, Object[] p) {
         logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
+
     }
     @AfterMethod
     public void stop() {
