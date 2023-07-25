@@ -1,10 +1,15 @@
 package org.example.Data;
 
+import com.github.javafaker.Faker;
+import net.bytebuddy.asm.Advice;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
+import org.testng.internal.invokers.Arguments;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class DataProviders {
 
@@ -22,8 +27,9 @@ public class DataProviders {
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{"Okay"});
         list.add(new Object[]{"Crist"});
-        list.add(new Object[]{"Arbeit"});
+        list.add(new Object[]{"Justin Tune"});
         return list.iterator();
     }
+    
 }
 
