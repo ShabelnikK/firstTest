@@ -31,7 +31,7 @@ public class Header extends Helper{
         clickOnVisibleElement(accountForm);
     }
     public void logout() throws InterruptedException {
-        clickOnVisibleElement(logoutButton);
         Thread.sleep(1500);
+        clickOnVisibleElement(logoutButton);
     }
 }

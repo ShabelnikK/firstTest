@@ -16,7 +16,10 @@ public class AuthAndEditTest extends Application {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
         app.getContactListHelper().openContact();
-        app.getContactPage().editContactData();
+        /*app.getContactPage().editContactInfoData();*/
+        app.getContactPage().editContactPhoneData();
+       /* app.getContactPage().editContactEmailData();
+        app.getContactPage().editContactAddressesData();*/
         app.getHeader().logout();
     }
 }
