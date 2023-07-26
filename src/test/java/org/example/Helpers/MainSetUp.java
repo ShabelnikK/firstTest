@@ -12,7 +12,7 @@ public class MainSetUp {
     AddContactPage addContact;
     Header header;
     ContactListHelper contactListHelper;
-    ContactPage contactPage;
+    ContactInformationPage contactPage;
 
     public LoginPage getLogin() {
         return login;
@@ -26,7 +26,7 @@ public class MainSetUp {
     public ContactListHelper getContactListHelper() {
         return contactListHelper;
     }
-    public ContactPage getContactPage() {
+    public ContactInformationPage getContactPage() {
         return contactPage;
     }
 
@@ -45,7 +45,7 @@ public class MainSetUp {
         addContact = new AddContactPage(driver);
         header = new Header(driver);
         contactListHelper = new ContactListHelper(driver);
-        contactPage = new ContactPage(driver);
+        contactPage = new ContactInformationPage(driver);
     }
 
     public void stop() {

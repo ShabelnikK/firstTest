@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class AddContactPage extends Helper {
 
-    By firstNameField = By.cssSelector("[placeholder=\"Имя\"]");
-    By lastNameField = By.cssSelector("[placeholder=\"Фамилия\"]");
-    By descriptionField = By.cssSelector("[placeholder=\"About\"]");
-    By saveButton = By.xpath("//button[.='Сохранить']");
+    By firstNameField = By.cssSelector("[formcontrolname=\"firstName\"]");
+    By lastNameField = By.cssSelector("[formcontrolname=\"lastName\"]");
+    By descriptionField = By.cssSelector("[formcontrolname=\"description\"]");
+    By saveButton = By.xpath("//button[.='Save']");
 
     public AddContactPage(WebDriver driver) {
         super(driver);
@@ -19,7 +19,7 @@ public class AddContactPage extends Helper {
         fillField(firstName, firstNameField);
         fillField(lastName, lastNameField);
         fillField(description, descriptionField);
-        Thread.sleep(1500);
+        Thread.sleep(1000);
     }
 
     public void clickSaveNewContactButton() {

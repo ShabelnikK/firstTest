@@ -30,4 +30,16 @@ public class Helper extends DataProviders {
             return false;
         }
     }
+    /*public boolean checkDisplayButton() {
+        boolean checkButton;
+        Assert.assertTrue(isElementPresent(driver.findElement(By.xpath("//*[@ng-reflect-dismissible=\"false\"]"))));
+       *//* boolean emptyDataPhone = driver.findElement(By.xpath("//*[@ng-reflect-dismissible=\"false\"]")).isDisplayed();
+        boolean notEmptyDataPhone = driver.findElement(By.xpath("//*[@ng-reflect-phones-to-display]")).isDisplayed();*//*
+        if () {
+            return true;
+        } else {
+            return false;
+        }
+
+    }*/
 }
