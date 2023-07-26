@@ -10,6 +10,7 @@ public class ContactPage extends Helper{
     }
 
     By saveButton = By.xpath("//*[@type=\"submit\"][text()=\" Save \"]");
+    By addPhoneNumberEmailAndAddressButton = By.id("btn-add-phone");
 
     //Вкладка информация(info)
     By infoFormContactPage = By.xpath("//*[@role=\"tab\"][text()=\"Info\"]");
@@ -33,7 +34,6 @@ public class ContactPage extends Helper{
 
     //Вкладка телефон(Phone)
     By phonesFormContactPage = By.xpath("//*[@role=\"tab\"][text()=\"Phones\"]");
-    By addPhoneNumberButton = By.id("btn-add-phone");
     By chooseCodeCountryPhoneNumber = By.xpath("//*[@id=\"cc-select\"]//*[text()=\" Armenia (+374) \"]");
     By addPhoneNumberForm = By.cssSelector("[formcontrolname=\"phoneNumber\"]");
 
@@ -41,7 +41,7 @@ public class ContactPage extends Helper{
         clickOnVisibleElement(phonesFormContactPage);
         Faker faker = new Faker();
         String addPhoneNumber = faker.phoneNumber().subscriberNumber(7);
-        clickOnVisibleElement(addPhoneNumberButton);
+        clickOnVisibleElement(addPhoneNumberEmailAndAddressButton);
         fillField(addPhoneNumber, addPhoneNumberForm);
         driver.findElement(chooseCodeCountryPhoneNumber).click();
         clickOnVisibleElement(saveButton);
@@ -49,10 +49,33 @@ public class ContactPage extends Helper{
     }
     //Вкладка email
     By emailsFormContactPage = By.xpath("//*[@role=\"tab\"][text()=\"E-mails\"]");
-    public void editContactEmailData() {
+    By addEmailContactForm = By.cssSelector("[formcontrolname=\"email\"]");
+    public void editContactEmailData() throws InterruptedException{
+        clickOnVisibleElement(emailsFormContactPage);
+        Faker faker = new Faker();
+        String addNewContactEmail = faker.internet().emailAddress();
+        clickOnVisibleElement(addPhoneNumberEmailAndAddressButton);
+        fillField(addNewContactEmail, addEmailContactForm);
+        clickOnVisibleElement(saveButton);
+        Thread.sleep(1500);
     }
     //Вкладка адрес(Addresses)
     By addressesFormContactPage = By.xpath("//*[@role=\"tab\"][text()=\"Addresses\"]");
-        public void editContactAddressesData() {
+    By addNewCity = By.cssSelector("[formcontrolname=\"city\"]");
+    By addNewPostcode = By.cssSelector("[formcontrolname=\"zip\"]");
+    By addNewStreet = By.cssSelector("[formcontrolname=\"street\"]");
+    By chooseContactCountry = By.xpath("//*[@value=\"Bangladesh\"]");
+    public void editContactAddressesData() {
+            clickOnVisibleElement(addressesFormContactPage);
+            Faker faker = new Faker();
+            String addNewContactCity = faker.address().city();
+            String addNewContactPostcode = faker.address().zipCode();
+            String addNewContactStreet = faker.address().streetAddress();
+            clickOnVisibleElement(addPhoneNumberEmailAndAddressButton);
+            driver.findElement(chooseContactCountry).click();
+            fillField(addNewContactCity, addNewCity);
+            fillField(addNewContactPostcode,addNewPostcode);
+            fillField(addNewContactStreet, addNewStreet);
+            clickOnVisibleElement(saveButton);
     }
 }
