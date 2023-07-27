@@ -1,7 +1,5 @@
 package org.example.Test;
 
-import javafx.scene.layout.Priority;
-import net.bytebuddy.build.Plugin;
 import org.example.Application;
 import org.example.Data.DataProviders;
 import org.testng.annotations.Test;

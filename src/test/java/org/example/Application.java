@@ -13,18 +13,18 @@ import java.util.Arrays;
 public class Application {
 
     static Logger logger = LoggerFactory.getLogger(Application.class);
+
     public static MainSetUp app = new MainSetUp();
-
-    @BeforeMethod
-    public void appSetUp() {
-        app.browseSetUp(true);
-    }
-
     @BeforeMethod
     public void startTest(Method m, Object[] p) {
         logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
 
     }
+    @BeforeMethod
+    public void appSetUp() {
+        app.browseSetUp(true);
+    }
+
     @AfterMethod
     public void stop() {
         app.stop();
