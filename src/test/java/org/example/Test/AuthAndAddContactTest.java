@@ -28,11 +28,11 @@ public class AuthAndAddContactTest extends Application {
 
     //Тест на добавление адреса, телефона, email в уже имеющийся контакт
     @Test(dataProvider = "searchContact", dataProviderClass = DataProviders.class)
-    void searchAndEditContact(String searchText) throws InterruptedException {
+    void searchAndAddNewContactDataTest(String searchText) throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
-        app.getContactListHelper().fillFieldSearchContactForm(searchText);
-        app.getContactListHelper().openContact();
+        app.getContactListPage().fillFieldSearchContactForm(searchText);
+        app.getContactListPage().openContact();
         app.getContactPage().addContactPhoneData();
         app.getContactPage().addContactEmailData();
         app.getContactPage().addContactAddressesData();

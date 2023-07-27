@@ -6,12 +6,12 @@ import org.testng.annotations.Test;
 
 public class RemoveContactTest extends Application {
     //Тест по удалению контакта
-    @Test(dataProvider = "removeContact", dataProviderClass = DataProviders.class)
+    @Test(dataProvider = "removeContactFromList", dataProviderClass = DataProviders.class)
     void removeContact(String searchText) throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
-        app.getContactListHelper().fillFieldSearchContactForm(searchText);
-        app.getContactListHelper().removeContact();
+        app.getContactListPage().fillFieldSearchContactForm(searchText);
+        app.getContactListPage().removeContact();
         app.getHeader().logout();
     }
 }

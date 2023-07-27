@@ -11,10 +11,24 @@ public class EditAndRemoveContactDataTest extends Application {
     void searchAndEditContact(String searchText) throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
-        app.getContactListHelper().fillFieldSearchContactForm(searchText);
-        app.getContactListHelper().openContact();
-        /*app.getContactPage().editContactInfoData();*/
+        app.getContactListPage().fillFieldSearchContactForm(searchText);
+        app.getContactListPage().openContact();
+        app.getContactPage().editContactInfoData();
         app.getContactPage().editContactPhoneData();
+        app.getContactPage().editContactEmailData();
+        app.getContactPage().editContactAddressesData();
+        app.getHeader().logout();
+    }
+
+    @Test(dataProvider = "removeContactData", dataProviderClass = DataProviders.class)
+    void searchAndRemoveContact(String searchText) throws InterruptedException {
+        app.getLogin().login();
+        app.getHeader().openDialogAndChangeLanguage();
+        app.getContactListPage().fillFieldSearchContactForm(searchText);
+        app.getContactListPage().openContact();
+        app.getContactPage().removeContactPhoneData();
+        app.getContactPage().removeContactEmailData();
+        app.getContactPage().removeContactAddressesData();
         app.getHeader().logout();
     }
 }

@@ -3,11 +3,11 @@ package org.example.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ContactListHelper extends Helper{
+public class ContactListPage extends Helper{
 
     By searchContactForm = By.id("input-search-contact");
     By openContactForm = By.xpath("//*[@id=\"contacts-list\"]//*[@class=\"list-group\"]");
-    public ContactListHelper(WebDriver driver) {
+    public ContactListPage(WebDriver driver) {
         super(driver);
     }
     //Заполнение поля поиск
