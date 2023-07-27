@@ -1,19 +1,21 @@
 package org.example.Test;
 
+import javafx.scene.layout.Priority;
+import net.bytebuddy.build.Plugin;
 import org.example.Application;
 import org.example.Data.DataProviders;
 import org.testng.annotations.Test;
 
 public class AuthAndAddContactTest extends Application {
 
-    @Test //Тест на авторизацию
+    @Test(priority = 1 ) //Тест на авторизацию
     void authTest() throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
         app.getHeader().logout();
     }
     //Тест на создание нового контакта и добавление адреса, телефона, email
-    @Test(dataProvider = "newContact", dataProviderClass = DataProviders.class)
+    @Test(priority = 3,dataProvider = "newContact", dataProviderClass = DataProviders.class)
     void AddNewContactAndNewContactDataTest(String firstName, String lastName, String description) throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
@@ -27,7 +29,7 @@ public class AuthAndAddContactTest extends Application {
     }
 
     //Тест на добавление адреса, телефона, email в уже имеющийся контакт
-    @Test(dataProvider = "searchContact", dataProviderClass = DataProviders.class)
+    @Test(priority = 2, dataProvider = "searchContact", dataProviderClass = DataProviders.class)
     void searchAndAddNewContactDataTest(String searchText) throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class EditAndRemoveContactDataTest extends Application {
 
     //Тест на поиск и редактирование контакта
-    @Test(dataProvider = "searchContact", dataProviderClass = DataProviders.class)
+    @Test(priority = 1, dataProvider = "searchContact", dataProviderClass = DataProviders.class)
     void searchAndEditContact(String searchText) throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
@@ -20,7 +20,7 @@ public class EditAndRemoveContactDataTest extends Application {
         app.getHeader().logout();
     }
 
-    @Test(dataProvider = "removeContactData", dataProviderClass = DataProviders.class)
+    @Test(priority = 2, dataProvider = "removeContactData", dataProviderClass = DataProviders.class)
     void searchAndRemoveContact(String searchText) throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
