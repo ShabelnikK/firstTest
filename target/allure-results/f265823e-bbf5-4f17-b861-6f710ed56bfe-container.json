@@ -1,0 +1,1 @@
+{"uuid":"f265823e-bbf5-4f17-b861-6f710ed56bfe","name":"org.example.Application.stop","children":["b5933586-8500-4103-b7b6-065b61fa8245"],"description":"","befores":[],"afters":[{"name":"stop","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1694261278107,"stop":1694261279485}],"start":1694261278107,"stop":1694261279485}

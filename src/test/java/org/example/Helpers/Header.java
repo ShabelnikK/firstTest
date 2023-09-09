@@ -1,7 +1,10 @@
 package org.example.Helpers;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class Header extends Helper{
 
@@ -12,23 +15,21 @@ public class Header extends Helper{
     By changeLanguage = By.cssSelector("[value=\"en\"]");
 
 
-    public Header(WebDriver driver) {
-        super(driver);
-    }
-
+    @Step("Открыть диалог добавления контакта")
     public void openDialogAddNewContact() throws InterruptedException{
         clickOnVisibleElement(addForm);
         Thread.sleep(1000);
     }
-
+    @Step("Открыть диалог смены языка")
     public void openDialogAndChangeLanguage() throws InterruptedException {
         clickOnVisibleElement(languageSelectForm);
-        driver.findElement(changeLanguage).click();
+        clickOnVisibleElement(changeLanguage);
         Thread.sleep(1000);
     }
     public void openAccount() {
         clickOnVisibleElement(accountForm);
     }
+    @Step("Открыть диалог смены языка")
     public void logout() throws InterruptedException {
         Thread.sleep(1500);
         clickOnVisibleElement(logoutButton);

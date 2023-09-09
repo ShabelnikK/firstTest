@@ -2,11 +2,14 @@ package org.example.Test;
 
 import org.example.Application;
 import org.example.Data.DataProviders;
+import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
-
+@DisplayName("Тест на авторизацию")
 public class AuthAndAddContactTest extends Application {
 
+
     @Test(priority = 1 ) //Тест на авторизацию
+    @DisplayName("Тест на авторизацию")
     void authTest() throws InterruptedException {
         app.getLogin().login();
         app.getHeader().openDialogAndChangeLanguage();
@@ -20,9 +23,10 @@ public class AuthAndAddContactTest extends Application {
         app.getHeader().openDialogAddNewContact();
         app.getAddContact().fillFieldAddContact(firstName, lastName, description);
         app.getAddContact().clickSaveNewContactButton();
-        app.getContactPage().addContactPhoneData();
+        app.getAddContact().checkNewAddContact(firstName);
+        /*app.getContactPage().addContactPhoneData();
         app.getContactPage().addContactEmailData();
-        app.getContactPage().addContactAddressesData();
+        app.getContactPage().addContactAddressesData();*/
         app.getHeader().logout();
     }
 

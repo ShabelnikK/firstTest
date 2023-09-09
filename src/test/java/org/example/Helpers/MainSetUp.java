@@ -1,13 +1,19 @@
 package org.example.Helpers;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.codeborne.selenide.Configuration.*;
+
+
 public class MainSetUp {
-    public WebDriver driver;
     LoginPage login;
     AddContactPage addContact;
     Header header;
@@ -19,7 +25,7 @@ public class MainSetUp {
     }
     public AddContactPage getAddContact() {
         return  addContact;
-    };
+    }
     public Header getHeader(){
         return header;
     }
@@ -30,26 +36,19 @@ public class MainSetUp {
         return contactPage;
     }
 
-    public void browseSetUp(boolean useRemoteDriver) {
-        if (useRemoteDriver == true) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        } else {
-            System.out.println("Что-то пошло не так");
-        }
-        driver.get("http://phonebook.telran-edu.de:8080");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    public void browseSetUp() {
+        Selenide.open("http://phonebook.telran-edu.de:8080");
 
-        login = new LoginPage(driver);
-        addContact = new AddContactPage(driver);
-        header = new Header(driver);
-        contactListPage = new ContactListPage(driver);
-        contactPage = new ContactInformationPage(driver);
+
+        login = new LoginPage();
+        addContact = new AddContactPage();
+        header = new Header();
+        contactListPage = new ContactListPage();
+        contactPage = new ContactInformationPage();
     }
 
     public void stop() {
-        driver.quit();
+        Selenide.closeWebDriver();
     }
 
 

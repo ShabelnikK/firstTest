@@ -5,10 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import static com.codeborne.selenide.Selenide.$;
+
 public class ContactInformationPage extends Helper{
-    public ContactInformationPage(WebDriver driver) {
-        super(driver);
-    }
 
     By saveButton = By.xpath("//*[@type=\"submit\"][text()=\" Save \"]");
     By addPhoneNumberEmailAndAddressButton = By.id("btn-add-phone");
@@ -20,6 +19,7 @@ public class ContactInformationPage extends Helper{
     By contactNewFirstName = By.cssSelector("[formcontrolname=\"firstName\"]");
     By contactNewLastName = By.cssSelector("[formcontrolname=\"lastName\"]");
     By contactNewDescription = By.cssSelector("[formcontrolname=\"description\"]");
+
 
     //Редактирование информации контакта ФИО
     public void editContactInfoData() throws InterruptedException{
@@ -52,7 +52,7 @@ public class ContactInformationPage extends Helper{
         String addPhoneNumber = faker.phoneNumber().subscriberNumber(7);
         clickOnVisibleElement(addPhoneNumberEmailAndAddressButton);
         fillField(addPhoneNumber, addPhoneNumberForm);
-        driver.findElement(chooseCodeCountryPhoneNumber).click();
+        $(chooseCodeCountryPhoneNumber).click();
         clickOnVisibleElement(saveButton);
         Thread.sleep(1000);
     }
@@ -65,7 +65,7 @@ public class ContactInformationPage extends Helper{
         Faker faker = new Faker();
         String addPhoneNumber = faker.phoneNumber().subscriberNumber(7);
         fillField(addPhoneNumber, addPhoneNumberForm);
-        driver.findElement(chooseNewCodeCountryPhoneNumber).click();
+        $(chooseNewCodeCountryPhoneNumber).click();
         clickOnVisibleElement(saveButton);
         Thread.sleep(1000);
     }
@@ -156,7 +156,7 @@ public class ContactInformationPage extends Helper{
             String addNewContactPostcode = faker.address().zipCode();
             String addNewContactStreet = faker.address().streetAddress();
             clickOnVisibleElement(addPhoneNumberEmailAndAddressButton);
-            driver.findElement(chooseContactCountry).click();
+            $(chooseContactCountry).click();
             fillField(addNewContactCity, addNewCity);
             fillField(addNewContactPostcode,addNewPostcode);
             fillField(addNewContactStreet, addNewStreet);
@@ -173,7 +173,7 @@ public class ContactInformationPage extends Helper{
         String addNewContactCity = faker.address().city();
         String addNewContactPostcode = faker.address().zipCode();
         String addNewContactStreet = faker.address().streetAddress();
-        driver.findElement(chooseNewContactCountry).click();
+        $(chooseNewContactCountry).click();
         fillField(addNewContactCity, addNewCity);
         fillField(addNewContactPostcode,addNewPostcode);
         fillField(addNewContactStreet, addNewStreet);
@@ -202,8 +202,8 @@ public class ContactInformationPage extends Helper{
         clickOnVisibleElement(filterContactCity);
     }
 }
-/* boolean emptyDataPhone = driver.findElement(By.xpath("//*[@ng-reflect-phones-to-display]")).isDisplayed();
-        boolean notEmptyDataPhone = driver.findElement(By.xpath("//*[@ng-reflect-phones-to-display]")).isDisplayed();
+/* boolean emptyDataPhone = $(By.xpath("//*[@ng-reflect-phones-to-display]")).isDisplayed();
+        boolean notEmptyDataPhone = $(By.xpath("//*[@ng-reflect-phones-to-display]")).isDisplayed();
         if (emptyDataPhone == true || notEmptyDataPhone != true) {
             System.out.println("У контакта еще нет телефонов");
         } else if (emptyDataPhone != true && notEmptyDataPhone == true){*/
@@ -215,6 +215,6 @@ public class ContactInformationPage extends Helper{
         Faker faker = new Faker();
         String addPhoneNumber = faker.phoneNumber().subscriberNumber(7);
         fillField(addPhoneNumber, addPhoneNumberForm);
-        driver.findElement(chooseCodeCountryPhoneNumber).click();
+        $(chooseCodeCountryPhoneNumber).click();
         clickOnVisibleElement(saveButton);
         Thread.sleep(1000);*/

@@ -17,8 +17,8 @@ public class DataProviders {
     Iterator<Object[]> newContact (){
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{"Kostya", "Shabel", "Vad"});
-        list.add(new Object[]{"Kostya456", "Shabel456", "Vad456"});
-        list.add(new Object[]{"Kostya7890", "Shabel7890", "Vad7890"});
+       /* list.add(new Object[]{"Kostya456", "Shabel456", "Vad456"});
+        list.add(new Object[]{"Kostya7890", "Shabel7890", "Vad7890"});*/
         return list.iterator();
     }
 

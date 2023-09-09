@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.example.Helpers.MainSetUp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +21,10 @@ public class Application {
         logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
 
     }
+    @Step("Настраиваем браузер")
     @BeforeMethod
     public void appSetUp() {
-        app.browseSetUp(true);
+        app.browseSetUp();
     }
 
     @AfterMethod
